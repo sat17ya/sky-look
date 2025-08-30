@@ -42,7 +42,9 @@ export default function Projects() {
               img={project.img}
               label={project.label}
               area={project.area}
-              type={project.type}
+              dimension={project.dimension}
+              facing={project.facing}
+              roadWidth={project.roadWidth}
               onClick={() => navigate(`/projects/${project.slug}`)}
             />
           ))}

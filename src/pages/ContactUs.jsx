@@ -1,5 +1,10 @@
 import React from "react";
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock } from "react-icons/fa";
+import {
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaClock,
+} from "react-icons/fa";
 
 const ContactPage = () => {
   return (
@@ -16,8 +21,8 @@ const ContactPage = () => {
             <div>
               <h3 className="font-semibold">Our Address</h3>
               <p className="text-gray-600">
-                Plot No-421/3677, Sheshadri Nagar, In Front of Indian Oil Petrol Pump,
-                Lingipur, Sisupalgarh, Bhubaneswar, Pin-751002, Odisha, India
+                Anandi Bhawan, Plot No: 1181/3134, Near Sai Temple, Siula, Gudia
+                Pokhari, Bhubaneswar, Pin-752104, Odisha, India
               </p>
             </div>
           </div>
@@ -27,9 +32,16 @@ const ContactPage = () => {
             <FaPhoneAlt className="text-orange-500 text-2xl" />
             <div>
               <h3 className="font-semibold">Contact Number</h3>
-              <p className="text-gray-600">+91 9439179111</p>
-              <p className="text-gray-600">+91 9556795111</p>
-              <p className="text-gray-600">+91 9090908111</p>
+              <p className="text-gray-600">
+                <a href="tel:+917325900244" className="hover:text-blue-600">
+                  +91 73259 00244
+                </a>
+              </p>
+              <p className="text-gray-600">
+                <a href="tel:+919438515293" className="hover:text-blue-600">
+                  +91 94385 15293
+                </a>
+              </p>
             </div>
           </div>
 
@@ -38,7 +50,14 @@ const ContactPage = () => {
             <FaEnvelope className="text-orange-500 text-2xl" />
             <div>
               <h3 className="font-semibold">Email</h3>
-              <p className="text-gray-600">info@skylook.com</p>
+              <p className="text-gray-600">
+                <a
+                  href="mailto:property.skylook@gmail.com"
+                  className="hover:text-blue-600"
+                >
+                  property.skylook@gmail.com
+                </a>
+              </p>
             </div>
           </div>
 
@@ -56,7 +75,7 @@ const ContactPage = () => {
         {/* Map */}
         <div className="rounded-lg overflow-hidden shadow-md">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117487.36189979948!2d85.7480396!3d20.2322266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909f83c2e09d7%3A0x7ff8b46b395a7a4a!2sDUDOS%20ENGINEERING%20PVT%20LTD!5e0!3m2!1sen!2sin!4v1690814469942!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3745.2666779302212!2d85.855021!3d20.164619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a3e051e0681f%3A0xfc7e507be5734ecf!2sSkylook%20Property!5e0!3m2!1sen!2sin!4v1756566612808!5m2!1sen!2sin"
             width="100%"
             height="450"
             style={{ border: 0 }}
@@ -64,6 +83,7 @@ const ContactPage = () => {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Google Map"
+            aria-label="Location of Skylook Property on Google Maps"
           ></iframe>
         </div>
       </div>

@@ -3,7 +3,12 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import projects from "../data/projects";
 import { motion } from "framer-motion";
-import { FaMapMarkerAlt, FaRulerCombined, FaBath, FaCar, FaBed, FaFilePdf } from "react-icons/fa";
+import { 
+  FaMapMarkerAlt, 
+  FaRulerCombined, 
+  FaFilePdf, 
+  FaLocationArrow 
+} from "react-icons/fa";
 
 // ✅ function to generate slug from title
 const slugify = (title) =>
@@ -74,18 +79,24 @@ const PropertyDetails = () => {
           <FaRulerCombined className="text-blue-600 text-2xl" />
           <span className="text-lg">{project.area}</span>
         </div>
-        <div className="flex items-center gap-3">
-          <FaBed className="text-green-600 text-2xl" />
-          <span className="text-lg">{project.type.bhk} BHK</span>
-        </div>
-        <div className="flex items-center gap-3">
-          <FaBath className="text-purple-600 text-2xl" />
-          <span className="text-lg">{project.type.bathrooms} Bathrooms</span>
-        </div>
-        <div className="flex items-center gap-3">
-          <FaCar className="text-orange-600 text-2xl" />
-          <span className="text-lg">{project.type.parking} Parking</span>
-        </div>
+        {project.dimension && (
+          <div className="flex items-center gap-3">
+            <FaRulerCombined className="text-green-600 text-2xl" />
+            <span className="text-lg">Dimension: {project.dimension}</span>
+          </div>
+        )}
+        {project.facing && (
+          <div className="flex items-center gap-3">
+            <FaRulerCombined className="text-purple-600 text-2xl" />
+            <span className="text-lg">Facing: {project.facing}</span>
+          </div>
+        )}
+        {project.roadWidth && (
+          <div className="flex items-center gap-3">
+            <FaRulerCombined className="text-orange-600 text-2xl" />
+            <span className="text-lg">Road: {project.roadWidth}</span>
+          </div>
+        )}
       </motion.div>
 
       {/* Description */}
@@ -101,23 +112,47 @@ const PropertyDetails = () => {
       )}
 
       {/* Features */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="mb-12"
-      >
-        <h2 className="text-2xl font-semibold mb-4">Features</h2>
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          {project.features.map((feature, index) => (
-            <li
-              key={index}
-              className="bg-gray-100 px-4 py-2 rounded-lg shadow-sm"
-            >
-              ✅ {feature}
-            </li>
-          ))}
-        </ul>
-      </motion.div>
+      {project.features && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="mb-12"
+        >
+          <h2 className="text-2xl font-semibold mb-4">Features</h2>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {project.features.map((feature, index) => (
+              <li
+                key={index}
+                className="bg-gray-100 px-4 py-2 rounded-lg shadow-sm"
+              >
+                ✅ {feature}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      )}
+
+      {/* Nearby Locations */}
+      {project.nearbyLocations && project.nearbyLocations.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="mb-12"
+        >
+          <h2 className="text-2xl font-semibold mb-4">Nearby Locations</h2>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {project.nearbyLocations.map((place, index) => (
+              <li
+                key={index}
+                className="flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-lg shadow-sm"
+              >
+                <FaLocationArrow className="text-blue-500" />
+                {place}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      )}
 
       {/* PDFs */}
       {project.pdfs && project.pdfs.length > 0 && (

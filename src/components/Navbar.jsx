@@ -39,11 +39,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
-          <NavLink to="/" className="text-2xl font-bold text-blue-600">
+          <NavLink to="/" className="text-3xl font-bold text-blue-600">
             <img
               src={logo}
               alt="Skylook Logo"
-              className="h-10 w-auto"
+              className="h-16 w-auto"
               loading="eager"
               fetchpriority="high"
             />

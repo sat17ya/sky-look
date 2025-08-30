@@ -1,5 +1,4 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { FaBed, FaBath, FaCar } from "react-icons/fa";
 import { useState, memo } from "react";
 
 function Tooltip({ children, text }) {
@@ -37,12 +36,13 @@ function ProjectCard({
   onClick,
   label,
   area,
-  type,
+  dimension,
+  facing,
+  roadWidth,
 }) {
   const badgeColors = {
     New: "bg-green-600",
     Ongoing: "bg-orange-500",
-    Upcoming: "bg-blue-600",
     Completed: "bg-gray-600",
   };
 
@@ -88,27 +88,13 @@ function ProjectCard({
           )}
         </div>
 
-        {/* Types + Button aligned */}
-        <div className="mt-auto flex items-center justify-between pt-3">
-          {type && (
-            <div className="flex items-center gap-4 text-gray-700 text-base font-medium">
-              <Tooltip text="Bedrooms">
-                <div className="flex items-center gap-1 cursor-pointer">
-                  <FaBed className="text-blue-600" size={18} /> {type.bhk}
-                </div>
-              </Tooltip>
-              <Tooltip text="Bathrooms">
-                <div className="flex items-center gap-1 cursor-pointer">
-                  <FaBath className="text-blue-600" size={18} /> {type.bathrooms}
-                </div>
-              </Tooltip>
-              <Tooltip text="Parking Spaces">
-                <div className="flex items-center gap-1 cursor-pointer">
-                  <FaCar className="text-blue-600" size={18} /> {type.parking}
-                </div>
-              </Tooltip>
-            </div>
-          )}
+        {/* Plot details + Button aligned */}
+        <div className="mt-auto flex items-end justify-between pt-3">
+          <div className="flex flex-col text-gray-700 text-sm font-medium gap-1">
+            {dimension && <p>📐 Dimension: {dimension}</p>}
+            {facing && <p>🧭 Facing: {facing}</p>}
+            {roadWidth && <p>🚗 Road Width: {roadWidth}</p>}
+          </div>
 
           <button
             onClick={onClick}

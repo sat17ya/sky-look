@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/logos/Skylook.avif";
 import { motion } from "framer-motion";
 import {
@@ -10,6 +10,8 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
+  const [mapVisible, setMapVisible] = useState(false);
+
   return (
     <footer className="bg-gray-900 text-white pt-10">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -108,24 +110,64 @@ const Footer = () => {
         {/* Section 3 - Contact */}
         <div>
           <h4 className="font-semibold mb-4">Contact</h4>
-          <p className="text-sm">123 Skylook Street, City, Country</p>
-          <p className="text-sm mt-2">📞 +91 9876543210</p>
-          <p className="text-sm">📧 info@skylook.com</p>
+          <p className="text-sm">
+            Anandi Bhawan, Plot No: 1181/3134, <br />
+            Near Sai Temple, Siula, Gudia Pokhari, <br />
+            Bhubaneswar, Odisha, 752104
+          </p>
+          <p className="text-sm mt-2">
+            📞{" "}
+            <a
+              href="tel:+917325900244"
+              className="hover:underline text-blue-600"
+            >
+              +91 73259 00244
+            </a>
+            ,{" "}
+            <a
+              href="tel:+919438515293"
+              className="hover:underline text-blue-600"
+            >
+              +91 94385 15293
+            </a>
+          </p>
+
+          <p className="text-sm">
+            📧{" "}
+            <a
+              href="mailto:property.skylook@gmail.com"
+              className="hover:underline text-blue-600"
+            >
+              property.skylook@gmail.com
+            </a>
+          </p>
         </div>
 
         {/* Section 4 - Map */}
         <div>
           <h4 className="font-semibold mb-4">Find Us</h4>
-          <iframe
-            title="Google Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!..."
-            width="100%"
-            height="150"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+
+          {!mapVisible ? (
+            <button
+              onClick={() => setMapVisible(true)}
+              className="w-full h-[150px] bg-gray-800 text-sm text-gray-400 flex items-center justify-center rounded-md hover:bg-gray-700 transition"
+            >
+              📍 Click to Load Map
+            </button>
+          ) : (
+            <iframe
+              title="Google Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3745.2666779302212!2d85.855021!3d20.164619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a3e051e0681f%3A0xfc7e507be5734ecf!2sSkylook%20Property!5e0!3m2!1sen!2sin!4v1756566612808!5m2!1sen!2sin"
+              width="100%"
+              height="150"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-md"
+              aria-label="Location of Skylook Property on Google Maps"
+            ></iframe>
+          )}
         </div>
       </div>
 
