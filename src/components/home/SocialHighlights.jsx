@@ -1,22 +1,22 @@
 import { motion } from "framer-motion";
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
-import test from "../../assets/logos/bg.webp"
 import bgImg2 from "../../assets/logos/gradient.png"
+import { Insta1 } from "../../assets";
 
 const highlights = [
   {
     id: 1,
     platform: "Instagram",
     icon: <FaInstagram className="text-pink-500 text-2xl" />,
-    image: test,
-    url: "https://www.instagram.com/yourpage/",
-    title: "Latest Property Showcase"
+    image: Insta1,
+    url: "https://www.instagram.com/p/DN0TOgCQBAK/",
+    title: "Best Property for Sale"
   },
   {
     id: 2,
     platform: "Facebook",
     icon: <FaFacebook className="text-blue-600 text-2xl" />,
-    image: test,
+    image: Insta1,
     url: "https://www.facebook.com/yourpage/",
     title: "Client Success Story"
   },
@@ -24,7 +24,7 @@ const highlights = [
     id: 3,
     platform: "YouTube",
     icon: <FaYoutube className="text-red-600 text-2xl" />,
-    image: test,
+    image: Insta1,
     url: "https://www.youtube.com/watch?v=yourvideo",
     title: "Walkthrough Video"
   },

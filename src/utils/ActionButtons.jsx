@@ -9,7 +9,7 @@ export default function FloatingActionMenu() {
           WhatsApp
         </span>
         <a
-          href="https://wa.me/919000000000" // Replace with your number
+          href="https://wa.me/919438515293" 
           target="_blank"
           rel="noopener noreferrer"
           className="w-12 h-12 flex items-center justify-center bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition"
@@ -24,7 +24,7 @@ export default function FloatingActionMenu() {
           Call Us
         </span>
         <a
-          href="tel:+919000000000" // Replace with your number
+          href="tel:+919438515293" 
           className="w-12 h-12 flex items-center justify-center bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 transition"
         >
           <FaPhoneAlt size={26} />

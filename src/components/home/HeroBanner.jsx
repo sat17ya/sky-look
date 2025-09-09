@@ -1,28 +1,49 @@
 // src/components/home/HeroBanner.jsx
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-// import heroImage from "../../assets/hero-banner.avif"; 
+import {Banner1,Banner2,Banner3,Banner4} from "../../assets/index"
+
+// ✅ Your 4 images
+const images = [Banner1,Banner2,Banner3,Banner4]
+  
 
 export default function HeroBanner() {
+  const [current, setCurrent] = useState(0);
+
+  // ✅ Auto-change image every 6s
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       className="h-[100vh] relative bg-gray-900 text-white overflow-hidden"
       aria-label="Skylook Property Hero Banner"
     >
-      {/* Background Image */}
-      <img
-        src="https://media.istockphoto.com/id/2154752387/photo/real-estate-concept-business-home-insurance-and-real-estate-protection-real-estate-investment.jpg?s=612x612&w=0&k=20&c=r6Tmn31ZHHr-8ZuWfZaYIYdqM9nD4dMc6NfDXxwsZeo="
-        alt="Luxury apartments by Skylook Property"
-        className="absolute inset-0 w-full h-full object-cover"
-        loading="eager" // Hero image should load first
-        width="1920"
-        height="900"
-        fetchpriority="high"
-      />
+      {/* ✅ Carousel Background */}
+      <div className="absolute inset-0 w-full h-full">
+        {images.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt={`Hero background ${index + 1}`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out ${
+              index === current ? "opacity-100" : "opacity-0"
+            }`}
+            loading={index === 0 ? "eager" : "lazy"}
+            width="1920"
+            height="900"
+          />
+        ))}
+      </div>
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
-      {/* Content */}
+      {/* Content (unchanged) */}
       <div className="relative z-10 container mx-auto px-4 py-24 md:py-40">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
