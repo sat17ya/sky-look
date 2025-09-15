@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {Banner1,Banner2,Banner3,Banner4} from "../../assets/index"
+import { Link } from "react-router-dom";
 
 // ✅ Your 4 images
 const images = [Banner1,Banner2,Banner3,Banner4]
@@ -71,18 +72,18 @@ export default function HeroBanner() {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="mt-8 flex flex-wrap gap-4"
         >
-          <a
-            href="/projects"
+          <Link
+            to="/projects"
             className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-6 py-3 rounded-lg shadow-lg transition"
           >
             View Projects
-          </a>
-          <a
-            href="/contact"
+          </Link>
+          <Link
+            to="/contact"
             className="bg-transparent border border-white hover:bg-white hover:text-black font-semibold px-6 py-3 rounded-lg transition"
           >
             Contact Us
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

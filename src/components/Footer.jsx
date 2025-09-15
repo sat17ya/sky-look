@@ -8,6 +8,7 @@ import {
   FaYoutube,
   FaTwitter,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const [mapVisible, setMapVisible] = useState(false);
@@ -90,19 +91,19 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="/about" className="hover:text-blue-400">
+              <Link to="/about" className="hover:text-blue-400">
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/services" className="hover:text-blue-400">
+              <Link to="/services" className="hover:text-blue-400">
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:text-blue-400">
+              <Link to="/contact" className="hover:text-blue-400">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

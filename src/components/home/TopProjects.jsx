@@ -3,7 +3,7 @@ import ProjectCard from "../ProjectCard";
 import { motion } from "framer-motion";
 // import bgImg from "../../assets/logos/bg.webp"
 import bgImg from "../../assets/logos/937995_ODE08A0.jpg"
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 export default function TopProjects() {
@@ -64,12 +64,12 @@ export default function TopProjects() {
       </motion.div>
 
       <div className="flex justify-center mt-6 relative z-10">
-        <a
-          href="/projects"
+        <Link
+          to="/projects"
           className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-6 py-3 rounded-lg shadow-lg transition"
         >
           View All Projects
-        </a>
+        </Link>
       </div>
     </section>
   );
