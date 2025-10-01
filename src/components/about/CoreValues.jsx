@@ -6,31 +6,31 @@ export default function CoreValues() {
   const coreValues = [
     {
       id: 1,
-      icon: "FaHandsHelping",
-      title: "Integrity",
+      icon: "FaCheckCircle",
+      title: "Trust & Transparency",
       description:
-        "We uphold the highest standards of honesty and transparency in everything we do."
+        "Verified plots with clear documentation and honest dealings."
     },
     {
       id: 2,
-      icon: "FaUsers",
-      title: "Collaboration",
+      icon: "FaSmile",
+      title: "Customer Satisfaction",
       description:
-        "Working together across teams and communities to achieve common goals."
+        "Ensuring smooth processes and happy families & investors."
     },
     {
       id: 3,
-      icon: "FaLightbulb",
-      title: "Innovation",
+      icon: "FaMapMarkedAlt",
+      title: "Reliability",
       description:
-        "Encouraging creativity and embracing change to deliver better outcomes."
+        "Timely handover and support for all your land needs."
     },
     {
       id: 4,
-      icon: "FaRegHeart",
-      title: "Compassion",
+      icon: "FaLeaf",
+      title: "Sustainable Growth",
       description:
-        "Caring for our people, clients, and community with empathy and respect."
+        "Helping you make smart, future-ready land investments."
     },
   ];
 

@@ -21,7 +21,7 @@ export default function NewProjectsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Our Top <span className="text-yellow-400">Featured Projects</span>
+          Our Top <span className="text-green-600">Featured Projects</span>
         </motion.h2>
 
         {/* Grid */}

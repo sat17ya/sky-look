@@ -1,4 +1,4 @@
-import React from "react";
+import {ContImg} from "../assets/index"
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -148,7 +148,7 @@ const ContactPage = () => {
         {/* Image */}
         <div className="flex justify-center">
           <img
-            src="https://i.ibb.co/jwpm6Xj/engineer.png"
+            src={ContImg}
             alt="Contact"
             className="rounded-2xl shadow-lg w-full max-w-md"
           />

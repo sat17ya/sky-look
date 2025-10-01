@@ -80,7 +80,7 @@ const projects = [
     title: "Green Estate",
     location: "Suburban Eco Living",
     img: "https://images.unsplash.com/photo-1605146769289-440113cc3d00?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    label: "Upcoming",
+    label: "Ongoing",
     area: "900 - 1,500 sq.ft",
     features: [
       "Eco-Park",
@@ -256,7 +256,7 @@ const projects = [
     title: "The Nalco Apartment",
     location: "Suburban Eco Living",
     img: "https://images.unsplash.com/photo-1605146769289-440113cc3d00?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    label: "New",
+    label: "Ongoing",
     area: "900 - 1,500 sq.ft",
     features: [
       "Eco-Park",

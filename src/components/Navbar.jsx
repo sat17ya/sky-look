@@ -10,7 +10,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
+    { name: "About Us", path: "/about" },
     { name: "Projects", path: "/projects" },
     { name: "Services", path: "/services" },
     { name: "Contact", path: "/contact" },
@@ -37,28 +37,28 @@ export default function Navbar() {
   return (
     <header className="bg-white shadow-md fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
+        <div className="flex justify-between h-17 items-center">
           {/* Logo */}
           <NavLink to="/" className="text-3xl font-bold text-blue-600">
             <img
               src={logo}
               alt="Skylook Logo"
-              className="h-16 w-auto"
+              className="nav-img"
               loading="eager"
               fetchpriority="high"
             />
           </NavLink>
           {/* Desktop Menu */}
-          <nav className="hidden md:flex space-x-6">
+          <nav className="hidden md:flex space-x-4">
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}
                 to={link.path}
                 className={({ isActive }) =>
-                  `transition-colors duration-200 ${
+                  `px-3 py-2 rounded-md transition-all duration-200 ${
                     isActive
-                      ? "text-blue-600 font-semibold"
-                      : "text-gray-700 hover:text-blue-600"
+                      ? "bg-blue-600 text-white font-semibold shadow-md"
+                      : "text-gray-700 hover:bg-blue-50 hover:text-blue-600"
                   }`
                 }
               >

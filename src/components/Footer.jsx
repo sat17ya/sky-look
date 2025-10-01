@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import logo from "../assets/logos/Skylook.avif";
 import { motion } from "framer-motion";
 import {
@@ -6,12 +5,12 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaYoutube,
-  FaTwitter,
 } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
-  const [mapVisible, setMapVisible] = useState(false);
+  // const [mapVisible, setMapVisible] = useState(false);
 
   return (
     <footer className="bg-gray-900 text-white pt-10">
@@ -21,11 +20,11 @@ const Footer = () => {
           <img
             src={logo}
             alt="Skylook Logo"
-            className="h-12 w-auto mb-4"
+            className="h-14 w-auto mb-4 bg-white rounded"
             loading="lazy"
           />
           <p className="text-sm mb-4">
-            Building modern web experiences with style and performance.
+            Delivering secure land solutions with ease, trust, and reliability.
           </p>
           <div className="flex space-x-3">
             <motion.a
@@ -73,10 +72,10 @@ const Footer = () => {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full bg-[#1DA1F2] text-white"
+              className="p-2 rounded-full bg-black text-white"
               aria-label="Twitter"
             >
-              <FaTwitter size={16} />
+              <BsTwitterX size={16} />
             </motion.a>
           </div>
         </div>
@@ -148,14 +147,7 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold mb-4">Find Us</h4>
 
-          {!mapVisible ? (
-            <button
-              onClick={() => setMapVisible(true)}
-              className="w-full h-[150px] bg-gray-800 text-sm text-gray-400 flex items-center justify-center rounded-md hover:bg-gray-700 transition"
-            >
-              📍 Click to Load Map
-            </button>
-          ) : (
+         
             <iframe
               title="Google Map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3745.2666779302212!2d85.855021!3d20.164619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a3e051e0681f%3A0xfc7e507be5734ecf!2sSkylook%20Property!5e0!3m2!1sen!2sin!4v1756566612808!5m2!1sen!2sin"
@@ -168,7 +160,7 @@ const Footer = () => {
               className="rounded-md"
               aria-label="Location of Skylook Property on Google Maps"
             ></iframe>
-          )}
+          
         </div>
       </div>
 

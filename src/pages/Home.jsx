@@ -69,15 +69,16 @@ export default function Home() {
           <div className="py-16 text-center text-gray-500">Loading...</div>
         }
       >
-        <FAQ category="home" />
+        <SocialHighlights />
       </Suspense>
       <Suspense
         fallback={
           <div className="py-16 text-center text-gray-500">Loading...</div>
         }
       >
-        <SocialHighlights />
+        <FAQ category="home" />
       </Suspense>
+      
     </main>
   );
 }

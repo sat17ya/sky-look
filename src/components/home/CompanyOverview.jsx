@@ -1,5 +1,6 @@
-import React from "react";
-import { FaBuilding, FaHandshake, FaKey, FaSmile } from "react-icons/fa";
+import { FaHome, FaSmile } from "react-icons/fa";
+import { LuLandPlot } from "react-icons/lu";
+import { IoDocument } from "react-icons/io5";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import bgImage from "../../assets/images/photo-test.avif";
@@ -29,56 +30,57 @@ export default function CompanyOverview() {
                 Company <span className="text-yellow-400">Overview</span>
               </h2>
               <p className="text-lg text-blue-200">
-                Building Dreams, Delivering Excellence
+                Invest Smart, Build Strong
               </p>
             </div>
             <p className="text-gray-200 max-w-lg mb-6 leading-relaxed">
-              We are a trusted real estate brand committed to delivering premium
-              residential and commercial projects. With a focus on quality,
-              transparency, and timely delivery, we create spaces that inspire
-              better living and ensure valuable investments. Over the years, our
-              dedication has earned us the trust of hundreds of families and
-              businesses.
+              At <span className="text-green-400">Skylook</span>, we specialize in providing secure and verified plots
+              that help you take the first step towards your dream home or smart
+              investment. With a commitment to transparency, trust, and
+              hassle-free processes, we ensure every plot we deliver becomes a
+              foundation for growth and happiness. Our dedication has made us a
+              preferred choice for families and investors who seek not just
+              land, but a future full of possibilities.
             </p>
             {/* CTA Button */}
             <a
-            href="/about"
-            className="bg-transparent border border-white hover:bg-white text-white hover:text-black font-semibold px-6 py-3 rounded-lg transition"
-          >
-            More About Us
-          </a>
+              href="/about"
+              className="bg-transparent border border-white hover:bg-white text-white hover:text-black font-semibold px-6 py-3 rounded-lg transition"
+            >
+              More About Us
+            </a>
           </div>
 
           {/* Right Service Cards */}
           <div className="grid sm:grid-cols-2 gap-6" ref={ref}>
             {/* Residential */}
             <div className="flex flex-col items-center text-center bg-white/90 p-6 rounded-lg shadow hover:shadow-lg transition">
-              <FaBuilding className="text-4xl text-blue-600 mb-3" />
+              <LuLandPlot className="text-4xl text-blue-600 mb-3" />
               <h3 className="font-semibold text-lg mb-1">
-                Residential Projects
+                Residential Plots
               </h3>
               <p className="text-gray-600 text-sm">
-                Premium homes designed for comfort and style.
+                Verified plots with clear titles, ready for your dream home.
               </p>
             </div>
 
             {/* Trusted Partnerships */}
             <div className="flex flex-col items-center text-center bg-white/90 p-6 rounded-lg shadow hover:shadow-lg transition">
-              <FaHandshake className="text-4xl text-green-600 mb-3" />
+              <IoDocument className="text-4xl text-green-600 mb-3" />
               <h3 className="font-semibold text-lg mb-1">
-                Trusted Partnerships
+                Trusted Documentation
               </h3>
               <p className="text-gray-600 text-sm">
-                Strong network with industry-leading partners.
+                Transparent process with verified papers and quick Patta handover.
               </p>
             </div>
 
             {/* Commercial Spaces */}
             <div className="flex flex-col items-center text-center bg-white/90 p-6 rounded-lg shadow hover:shadow-lg transition">
-              <FaKey className="text-4xl text-yellow-500 mb-3" />
-              <h3 className="font-semibold text-lg mb-1">Commercial Spaces</h3>
+              <FaHome className="text-4xl text-yellow-500 mb-3" />
+              <h3 className="font-semibold text-lg mb-1">Ready-to-Build</h3>
               <p className="text-gray-600 text-sm">
-                Modern, functional workspaces for growing businesses.
+                Plots with boundary, road, and electrification for immediate construction.
               </p>
             </div>
 
@@ -89,7 +91,7 @@ export default function CompanyOverview() {
                 Happy Customers
               </h3>
               <span className="text-3xl font-bold text-white">
-                {inView ? <CountUp start={0} end={500} duration={3} /> : 0}+
+                {inView ? <CountUp start={0} end={100} duration={3} /> : 0}+
               </span>
               <p className="text-blue-100 text-sm">
                 Proudly serving satisfied families & businesses.

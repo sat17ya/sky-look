@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import teamImg from "../../assets/images/photo-test.avif"; 
+import { Link } from "react-router-dom";
 
 export default function WhoWeAre() {
   return (
@@ -14,7 +15,7 @@ export default function WhoWeAre() {
         >
           <img
             src={teamImg}
-            alt="Our Team"
+            alt="Skylook Team"
             className="rounded-2xl shadow-lg object-cover w-full h-[400px]"
             loading="lazy"
           />
@@ -26,19 +27,20 @@ export default function WhoWeAre() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          {/* Who We Are */}
+          {/* Main Heading */}
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Who <span className="text-yellow-400">We</span> Are
+            Your Trusted Partner in <span className="text-yellow-400">Land & Plots</span>
           </h2>
+
+          {/* Subheading / Paragraph */}
           <p className="text-gray-600 mb-8 leading-relaxed">
-            We are a forward-thinking organization dedicated to delivering 
-            innovative solutions and exceptional value. Our team is committed 
-            to excellence, driven by passion, and focused on creating a 
-            positive impact in every project we undertake.
+            At <span className="text-green-500">Skylook</span>, we provide verified plots and hassle-free land solutions 
+            that help you secure your dream home or a smart investment. Transparency, trust, and timely handover 
+            are at the core of everything we do.
           </p>
 
           {/* Mission & Vision Cards */}
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-6 mb-6">
             <motion.div
               whileHover={{ scale: 1.03 }}
               className="bg-white p-6 rounded-xl shadow-md border border-gray-100"
@@ -47,8 +49,7 @@ export default function WhoWeAre() {
                 Our Mission
               </h3>
               <p className="text-gray-600 text-sm">
-                To empower communities and clients by providing innovative, 
-                sustainable, and impactful solutions tailored to their needs.
+                To empower families and investors with verified plots and seamless assistance for building their future.
               </p>
             </motion.div>
 
@@ -60,11 +61,18 @@ export default function WhoWeAre() {
                 Our Vision
               </h3>
               <p className="text-gray-600 text-sm">
-                To be a leader in innovation and service excellence, shaping 
-                a brighter and more sustainable future for all.
+                To be the most trusted name in land solutions, helping clients create secure, valuable, and sustainable investments.
               </p>
             </motion.div>
           </div>
+
+          {/* CTA Button */}
+          <Link
+            to="/projects"
+            className="inline-block bg-yellow-400 text-gray-900 font-semibold px-6 py-3 rounded-lg hover:bg-yellow-500 transition"
+          >
+            Start Your Investment Journey
+          </Link>
         </motion.div>
       </div>
     </section>

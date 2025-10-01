@@ -7,9 +7,9 @@ import bgImg2 from "../../assets/logos/9924918_4303688.svg";
 
 export default function Overview() {
   const achievements = [
-    { id: 1, icon: "FaUsers", number: "1200+", label: "Happy Clients" },
-    { id: 2, icon: "FaAward", number: "15+", label: "Awards Won" },
-    { id: 3, icon: "FaProjectDiagram", number: "200+", label: "Projects Delivered" },
+    { id: 1, icon: "FaUsers", number: "100+", label: "Happy Clients" },
+    { id: 2, icon: "FaAward", number: "5+", label: "Awards Won" },
+    { id: 3, icon: "FaProjectDiagram", number: "4+", label: "Projects Delivered" },
   ];
 
   // Helper to render dynamic icon
@@ -48,7 +48,7 @@ export default function Overview() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Our Services & <span className=" text-yellow-400">Achievements</span>
+            Our Services & <span className=" text-green-700">Achievements</span>
           </h2>
           <p className="text-gray-600 mb-6">
             We provide end-to-end real estate solutions that ensure a smooth

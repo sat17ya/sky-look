@@ -26,8 +26,8 @@ export default function TopProjects() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Our Top <span className="text-yellow-400">Projects</span>
-        <span className="block w-72 h-1 bg-red-600 mx-auto mt-3 rounded-full"></span>
+        Our Top <span className="text-green-600">Projects</span>
+        {/* <span className="block w-72 h-1 bg-red-600 mx-auto mt-3 rounded-full"></span> */}
       </motion.h2>
 
       {/* Project cards with stagger animation */}
