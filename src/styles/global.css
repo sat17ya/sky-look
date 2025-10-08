@@ -37,3 +37,30 @@ body {
         .animated-gradient-btn:focus {
           box-shadow: 0 0 0 4px rgba(250, 204, 21, 0.22);
         }
+
+
+@keyframes gradientGlow {
+  0% {
+    background-position: 0% 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4),
+                0 0 20px rgba(255, 0, 0, 0.4),
+                0 0 30px rgba(255, 255, 0, 0.4);
+  }
+  50% {
+    background-position: 100% 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6),
+                0 0 30px rgba(255, 0, 0, 0.6),
+                0 0 40px rgba(255, 255, 0, 0.6);
+  }
+  100% {
+    background-position: 0% 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4),
+                0 0 20px rgba(255, 0, 0, 0.4),
+                0 0 30px rgba(255, 255, 0, 0.4);
+  }
+}
+
+.animate-gradient-glow {
+  animation: gradientGlow 3s ease-in-out infinite;
+  background-size: 200% 200%;
+}

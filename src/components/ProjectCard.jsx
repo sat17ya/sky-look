@@ -12,11 +12,16 @@ function ProjectCard({
   facing,
   roadWidth,
 }) {
+  // Define gradient colors for badges
   const badgeColors = {
-    New: "bg-red-600",
-    Ongoing: "bg-orange-500",
+    New: "bg-gradient-to-r from-red-800 via-red-500 to-yellow-400",
+    Ongoing: "bg-gradient-to-r from-orange-500 via-pink-500 to-yellow-400",
     Completed: "bg-gray-600",
   };
+
+  // Apply glow animation only to New & Ongoing
+  const glowEffect =
+    label === "New" || label === "Ongoing" ? "animate-gradient-glow" : "";
 
   return (
     <motion.div
@@ -51,9 +56,9 @@ function ProjectCard({
               repeatType: "loop",
               ease: "easeInOut",
             }}
-            className={`absolute top-3 left-3 text-white text-xs font-bold px-3 py-1 rounded-md shadow-lg ${
-              badgeColors[label] ?? "bg-blue-600"
-            }`}
+            className={`absolute top-3 left-3 text-white text-xs font-bold px-3 py-1 rounded-md shadow-lg
+              ${badgeColors[label] ?? "bg-blue-600"}
+              bg-[length:200%_200%] ${glowEffect}`}
           >
             {label === "New" ? "Newly Launched" : label}
           </motion.span>
@@ -65,7 +70,6 @@ function ProjectCard({
         <div>
           <h3 className="text-lg font-semibold">{title}</h3>
           <p className="text-gray-500 text-sm">{location}</p>
-         
         </div>
 
         {/* Plot details + Button */}
