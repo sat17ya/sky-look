@@ -4,12 +4,16 @@ import services from "../../data/services";
 import ladyImg from "../../assets/logos/image.png";
 import bgImg2 from "../../assets/logos/9924918_4303688.svg";
 
-
 export default function Overview() {
   const achievements = [
     { id: 1, icon: "FaUsers", number: "1500+", label: "Happy Clients" },
     { id: 2, icon: "FaAward", number: "10+", label: "Awards Won" },
-    { id: 3, icon: "FaProjectDiagram", number: "15+", label: "Projects Delivered" },
+    {
+      id: 3,
+      icon: "FaProjectDiagram",
+      number: "15+",
+      label: "Projects Delivered",
+    },
   ];
 
   // Helper to render dynamic icon
@@ -19,14 +23,16 @@ export default function Overview() {
   };
 
   return (
-    <section className="relative py-20 px-6 lg:px-16 bg-gray-50"style={{
+    <section
+      className="relative py-20 px-6 lg:px-16 bg-gray-50"
+      style={{
         backgroundImage: `url(${bgImg2})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-      }}>
+      }}
+    >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        
         {/* Left Side - Lady Image */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -43,9 +49,10 @@ export default function Overview() {
 
         {/* Right Side - Services & Achievements */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Our Services & <span className=" text-green-700">Achievements</span>
@@ -62,11 +69,15 @@ export default function Overview() {
                 key={service.id}
                 className="p-5 bg-white shadow-md rounded-lg border hover:shadow-lg transition flex flex-col h-full"
               >
-                <div className="mb-3">{renderIcon(service.icon, "text-3xl text-yellow-600")}</div>
+                <div className="mb-3">
+                  {renderIcon(service.icon, "text-3xl text-yellow-600")}
+                </div>
                 <h3 className="text-lg font-semibold text-gray-800">
                   {service.title}
                 </h3>
-                <p className="text-gray-500 text-sm mt-2 flex-grow">{service.description}</p>
+                <p className="text-gray-500 text-sm mt-2 flex-grow">
+                  {service.description}
+                </p>
               </div>
             ))}
           </div>
@@ -82,7 +93,9 @@ export default function Overview() {
                 <div className="flex justify-center mb-2">
                   {renderIcon(ach.icon, "text-yellow-600 text-3xl")}
                 </div>
-                <h4 className="text-xl font-bold text-gray-900">{ach.number}</h4>
+                <h4 className="text-xl font-bold text-gray-900">
+                  {ach.number}
+                </h4>
                 <p className="text-gray-600 text-sm">{ach.label}</p>
               </motion.div>
             ))}

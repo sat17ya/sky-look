@@ -20,6 +20,7 @@ export default function NewProjectsSection() {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          viewport={{once:true}}
         >
           Our Top <span className="text-green-600">Featured Projects</span>
         </motion.h2>
