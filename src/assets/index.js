@@ -18,7 +18,7 @@ import P4_3 from "./images/phase4-3.JPG";
 import P4_4 from "./images/phase4-4.png";
 import P10_1 from "./images/p10-1.jpeg";
 import P10_2 from "./images/p10-2.jpeg";
-import P10_3 from "./images/P10-3.jpeg";
+import P10_3 from "./images/p10-3.jpeg";
 import P12_1 from "./images/p12-1.JPG";
 import P12_2 from "./images/p12-2.jpeg";
 import P12_3 from "./images/p12-3.JPG";
