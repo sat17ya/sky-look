@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import bgImg2 from "../../assets/logos/gradient.png"
-import { Insta1 } from "../../assets";
+import { Insta1 , Fb1 } from "../../assets";
+import { useEffect, useState } from "react";
 
 const highlights = [
   {
     id: 1,
     platform: "Instagram",
     icon: <FaInstagram className="text-pink-500 text-2xl" />,
-    image: Insta1,
+    image: Insta1,  // manual thumb
     url: "https://www.instagram.com/p/DN0TOgCQBAK/",
     title: "Best Property for Sale"
   },
@@ -16,7 +17,7 @@ const highlights = [
     id: 2,
     platform: "Facebook",
     icon: <FaFacebook className="text-blue-600 text-2xl" />,
-    image: Insta1,
+    image: Fb1, // manual thumb
     url: "https://www.facebook.com/yourpage/",
     title: "Client Success Story"
   },
@@ -24,20 +25,42 @@ const highlights = [
     id: 3,
     platform: "YouTube",
     icon: <FaYoutube className="text-red-600 text-2xl" />,
-    image: Insta1,
-    url: "https://www.youtube.com/watch?v=yourvideo",
+    image: null, // AUTO thumb
+    url: "https://www.youtube.com/watch?v=JLqC4Mz1Lvg",
     title: "Walkthrough Video"
   },
 ];
 
 export default function SocialHighlights() {
+
+  const [thumbs, setThumbs] = useState({});
+
+  useEffect(() => {
+    const result = {};
+
+    highlights.forEach((item) => {
+      if (item.platform === "YouTube") {
+        const videoId = item.url.split("v=")[1];
+        result[item.id] = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+      } else {
+        // keep your manual thumbnails for Instagram & Facebook
+        result[item.id] = item.image;
+      }
+    });
+
+    setThumbs(result);
+  }, []);
+
   return (
-    <section className="py-20 px-6 lg:px-16 bg-white" style={{
-            backgroundImage: `url(${bgImg2})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}>
+    <section
+      className="py-20 px-6 lg:px-16 bg-white"
+      style={{
+        backgroundImage: `url(${bgImg2})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <div className="max-w-7xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
@@ -60,7 +83,7 @@ export default function SocialHighlights() {
             >
               <div className="relative">
                 <img
-                  src={item.image}
+                  src={thumbs[item.id]}
                   alt={item.title}
                   loading="lazy"
                   className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"

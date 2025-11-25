@@ -2,7 +2,6 @@ import { Suspense, lazy } from "react";
 const WhoWeAre = lazy(() => import("../components/about/WhoWeAre"));
 const CoreValues = lazy(() => import("../components/about/CoreValues"));
 const StatsStrip = lazy(() => import("../components/about/StatsStrip"));
-const TeamSection = lazy(() => import("../components/about/TeamSection"));
 const ConsultationStrip = lazy(() => import("../components/ConsultationStrip"));
 
 
@@ -32,13 +31,6 @@ export default function AboutUs() {
         }
       >
         <StatsStrip  />
-      </Suspense>
-      <Suspense
-        fallback={
-          <div className="py-16 text-center text-gray-500">Loading...</div>
-        }
-      >
-        <TeamSection />
       </Suspense>
       <Suspense
         fallback={

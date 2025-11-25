@@ -12,7 +12,7 @@ export default function NewProjectsSection() {
     .slice(0, 4); // ✅ only 4 cards
 
   return (
-    <section className="py-10 bg-gray-50">
+    <section className="py-10 bg-gray-50 top-feature">
       <div className="container mx-auto px-4">
         {/* Heading */}
         <motion.h2
@@ -36,9 +36,9 @@ export default function NewProjectsSection() {
                 onClick={() => navigate(`/projects/${project.slug}`)}
                 label={project.label}
                 area={project.area}
-                dimension={project.dimension}
-                facing={project.facing}
+                subFeature={project.subFeature}
                 roadWidth={project.roadWidth}
+                subLoc={project.subLoc}
               />
             ))
           ) : (

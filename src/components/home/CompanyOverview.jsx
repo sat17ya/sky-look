@@ -34,13 +34,13 @@ export default function CompanyOverview() {
               </p>
             </div>
             <p className="text-gray-200 max-w-lg mb-6 leading-relaxed">
-              At <span className="text-green-400">Skylook</span>, we specialize in providing secure and verified plots
-              that help you take the first step towards your dream home or smart
-              investment. With a commitment to transparency, trust, and
-              hassle-free processes, we ensure every plot we deliver becomes a
-              foundation for growth and happiness. Our dedication has made us a
-              preferred choice for families and investors who seek not just
-              land, but a future full of possibilities.
+              Founded in 2012, <span className="text-green-400">Skylook</span> is a trusted real estate company offering
+              secure, verified, and legally transparent plots across three major
+              cities. We are committed to transparency, trust, and hassle-free
+              plot buying, helping families and investors find land that’s safe,
+              approved, and ready for future growth. With a focus on quality and
+              customer satisfaction, Skylook turns every plot into a promising
+              foundation for a better tomorrow.
             </p>
             {/* CTA Button */}
             <a
@@ -56,9 +56,7 @@ export default function CompanyOverview() {
             {/* Residential */}
             <div className="flex flex-col items-center text-center bg-white/90 p-6 rounded-lg shadow hover:shadow-lg transition">
               <LuLandPlot className="text-4xl text-blue-600 mb-3" />
-              <h3 className="font-semibold text-lg mb-1">
-                Residential Plots
-              </h3>
+              <h3 className="font-semibold text-lg mb-1">Residential Plots</h3>
               <p className="text-gray-600 text-sm">
                 Verified plots with clear titles, ready for your dream home.
               </p>
@@ -71,7 +69,8 @@ export default function CompanyOverview() {
                 Trusted Documentation
               </h3>
               <p className="text-gray-600 text-sm">
-                Transparent process with verified papers and quick Patta handover.
+                Transparent process with verified papers and quick Patta
+                handover.
               </p>
             </div>
 
@@ -80,7 +79,8 @@ export default function CompanyOverview() {
               <FaHome className="text-4xl text-yellow-500 mb-3" />
               <h3 className="font-semibold text-lg mb-1">Ready-to-Build</h3>
               <p className="text-gray-600 text-sm">
-                Plots with boundary, road, and electrification for immediate construction.
+                Plots with boundary, road, and electrification for immediate
+                construction.
               </p>
             </div>
 
@@ -91,7 +91,7 @@ export default function CompanyOverview() {
                 Happy Customers
               </h3>
               <span className="text-3xl font-bold text-white">
-                {inView ? <CountUp start={0} end={100} duration={3} /> : 0}+
+                {inView ? <CountUp start={0} end={1500} duration={3} /> : 0}+
               </span>
               <p className="text-blue-100 text-sm">
                 Proudly serving satisfied families & businesses.

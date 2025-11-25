@@ -1,4 +1,5 @@
-import {ContImg} from "../assets/index"
+import { useState } from "react";
+import { ContImg } from "../assets/index";
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -7,8 +8,41 @@ import {
 } from "react-icons/fa";
 
 const ContactPage = () => {
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+
+    // Stop bots (honeypot field)
+    if (form.honey.value !== "") return;
+
+    const formData = new FormData(form);
+
+    await fetch("https://formsubmit.co/property.skylook@gmail.com", {
+      method: "POST",
+      body: formData,
+    });
+
+    form.reset(); // Reset inputs
+
+    // Show popup
+    setSuccess(true);
+
+    setTimeout(() => setSuccess(false), 3000);
+  };
+
   return (
     <div className="w-full px-6 lg:px-20 py-12 bg-white">
+
+      {/* SUCCESS POPUP */}
+      {success && (
+        <div className="fixed top-5 right-5 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 transition-all">
+          Message Sent Successfully!
+        </div>
+      )}
+
       {/* Top Section - Info + Map */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
         {/* Contact Info */}
@@ -42,6 +76,11 @@ const ContactPage = () => {
                   +91 94385 15293
                 </a>
               </p>
+              <p className="text-gray-600">
+                <a href="tel:+919438515293" className="hover:text-blue-600">
+                  +91 93377 12156
+                </a>
+              </p>
             </div>
           </div>
 
@@ -56,6 +95,14 @@ const ContactPage = () => {
                   className="hover:text-blue-600"
                 >
                   property.skylook@gmail.com
+                </a>
+              </p>
+              <p className="text-gray-600">
+                <a
+                  href="mailto:skylookindia@gmail.com"
+                  className="hover:text-blue-600"
+                >
+                  skylookindia@gmail.com
                 </a>
               </p>
             </div>
@@ -83,7 +130,6 @@ const ContactPage = () => {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Google Map"
-            aria-label="Location of Skylook Property on Google Maps"
           ></iframe>
         </div>
       </div>
@@ -95,44 +141,48 @@ const ContactPage = () => {
           <h3 className="uppercase text-orange-500 font-semibold tracking-wider">
             Get in Touch
           </h3>
-          <h2 className="text-3xl font-bold mb-6">
-            Have An Upcoming Project? <br /> Let’s Talk Now!
-          </h2>
+          <h2 className="text-3xl font-bold mb-6">Let’s Talk Now!</h2>
 
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            {/* Hidden Inputs */}
+            <input type="hidden" name="_captcha" value="false" />
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Inquiry From Skylook Website!"
+            />
+
+            {/* Honeypot Field - Anti Spam */}
+            <input
+              type="text"
+              name="honey"
+              style={{ display: "none" }}
+              autoComplete="off"
+              tabIndex="-1"
+            />
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <input
                 type="text"
+                name="name"
                 placeholder="Your Name"
+                required
                 className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-orange-400"
               />
               <input
                 type="email"
+                name="email"
                 placeholder="Email Address"
+                required
                 className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-orange-400"
               />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input
-                type="text"
-                placeholder="Phone Number"
-                className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-orange-400"
-              />
-              <select className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-orange-400">
-                <option>Select Subjects</option>
-                <option>Property Consultation</option>
-                <option>Legal Assistance</option>
-                <option>Loan Assistance</option>
-                <option>Property Management</option>
-                <option>Interior Designing</option>
-                <option>Other</option>
-              </select>
             </div>
 
             <textarea
               rows="4"
+              name="message"
               placeholder="Your Message"
+              required
               className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-orange-400"
             ></textarea>
 

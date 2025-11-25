@@ -7,9 +7,9 @@ import bgImg2 from "../../assets/logos/9924918_4303688.svg";
 
 export default function Overview() {
   const achievements = [
-    { id: 1, icon: "FaUsers", number: "100+", label: "Happy Clients" },
-    { id: 2, icon: "FaAward", number: "5+", label: "Awards Won" },
-    { id: 3, icon: "FaProjectDiagram", number: "4+", label: "Projects Delivered" },
+    { id: 1, icon: "FaUsers", number: "1500+", label: "Happy Clients" },
+    { id: 2, icon: "FaAward", number: "10+", label: "Awards Won" },
+    { id: 3, icon: "FaProjectDiagram", number: "15+", label: "Projects Delivered" },
   ];
 
   // Helper to render dynamic icon

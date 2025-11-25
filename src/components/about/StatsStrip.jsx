@@ -4,9 +4,9 @@ import CountUp from "react-countup";
 
 export default function StatsStrip() {
   const stats = [
-    { id: 1, number: 4, suffix: "+", label: "Project Completed" },
-    { id: 2, number: 100, suffix: "+", label: "Customer Satisfied" },
-    { id: 3, number: 20, suffix: "+", label: "Expert Team Members" },
+    { id: 1, number: 15, suffix: "+", label: "Project Completed" },
+    { id: 2, number: 1500, suffix: "+", label: "Customer Satisfied" },
+    { id: 3, number: 30, suffix: "+", label: "Expert Team Members" },
     { id: 4, number: 3, suffix: "+", label: "Available in Cities" },
   ];
 

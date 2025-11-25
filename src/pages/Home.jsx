@@ -5,9 +5,6 @@ const NewProjectsSection = lazy(() => import("../components/home/NewProjectsSect
 const CompanyOverview = lazy(() =>
   import("../components/home/CompanyOverview")
 );
-const TopProjects = lazy(() =>
-  import("../components/home/TopProjects")
-);
 const Overview = lazy(() => import("../components/home/Overview"));
 const ConsultationStrip = lazy(() => import("../components/ConsultationStrip"));
 const FAQ = lazy(() => import("../components/FAQ"));
@@ -42,13 +39,6 @@ export default function Home() {
         }
       >
         <CompanyOverview />
-      </Suspense>
-      <Suspense
-        fallback={
-          <div className="py-16 text-center text-gray-500">Loading...</div>
-        }
-      >
-        <TopProjects />
       </Suspense>
       <Suspense
         fallback={

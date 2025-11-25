@@ -34,9 +34,7 @@ export default function WhoWeAre() {
 
           {/* Subheading / Paragraph */}
           <p className="text-gray-600 mb-8 leading-relaxed">
-            At <span className="text-green-500">Skylook</span>, we provide verified plots and hassle-free land solutions 
-            that help you secure your dream home or a smart investment. Transparency, trust, and timely handover 
-            are at the core of everything we do.
+            <span className="text-green-400">Skylook</span>, established in 2012, is a trusted real estate company specializing in secure, verified, and legally transparent residential plots across three major cities. We simplify the plot-buying journey by offering fully approved land, clear documentation, and a customer-first approach. Our commitment to trust, transparency, and timely delivery ensures that every investment is safe and future-ready. With a strong focus on quality and long-term value, Skylook helps families and investors build a solid foundation for growth, security, and a better tomorrow.
           </p>
 
           {/* Mission & Vision Cards */}

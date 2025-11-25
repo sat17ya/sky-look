@@ -29,7 +29,7 @@ const Footer = () => {
           <div className="flex space-x-3">
             <motion.a
               whileHover={{ scale: 1.2 }}
-              href="https://facebook.com"
+              href="https://www.facebook.com/profile.php?id=100091256942332"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-[#1877F2] text-white"
@@ -39,7 +39,7 @@ const Footer = () => {
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.2 }}
-              href="https://instagram.com"
+              href="https://instagram.coms/kylook.property.ig/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-[#E4405F] text-white"
@@ -47,7 +47,7 @@ const Footer = () => {
             >
               <FaInstagram size={16} />
             </motion.a>
-            <motion.a
+            {/* <motion.a
               whileHover={{ scale: 1.2 }}
               href="https://linkedin.com"
               target="_blank"
@@ -56,10 +56,10 @@ const Footer = () => {
               aria-label="LinkedIn"
             >
               <FaLinkedinIn size={16} />
-            </motion.a>
+            </motion.a> */}
             <motion.a
               whileHover={{ scale: 1.2 }}
-              href="https://youtube.com"
+              href="https://www.youtube.com/@property.skylook"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-[#FF0000] text-white"
@@ -67,7 +67,7 @@ const Footer = () => {
             >
               <FaYoutube size={16} />
             </motion.a>
-            <motion.a
+            {/* <motion.a
               whileHover={{ scale: 1.2 }}
               href="https://twitter.com"
               target="_blank"
@@ -76,7 +76,7 @@ const Footer = () => {
               aria-label="Twitter"
             >
               <BsTwitterX size={16} />
-            </motion.a>
+            </motion.a> */}
           </div>
         </div>
 
